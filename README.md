@@ -62,20 +62,20 @@ where/
 ## **⚙️ Installation & Integration Guide**
 Follow these steps to set up the development environment and run WHeRe? on your local machine.
 
-**1. Prerequisites**
+### **1. Prerequisites**
 * **Flutter SDK (Latest Stable Version):** Latest stable version installed.
 * **Dart SDK:** Included with Flutter.
 * **Firebase Project:** A project created on the Firebase Console.
 * **Gemini API Key:** Obtained from Google AI Studio.
 * **Cloudinary Account:** For managing user profile avatars.
 
-**2. Clone the Repository**
+### **2. Clone the Repository**
 ```bash
 git clone https://github.com/KbrPrmk/WHere-flutter-app.git
 cd WHere-flutter-app
 ```
 
-**3. Dependency Installation**
+### **3. Dependency Installation**
 The project relies on a comprehensive set of packages to handle AI, mapping, and cloud services. Install them using the command below:
 ```bash
 flutter pub get
@@ -89,16 +89,16 @@ flutter pub get
 * **Local Management:** `shared_preferences` (Local data caching) and `permission_handler` (System permission management).
 * **Notifications:** `flutter_local_notifications`.
 
-**4. Configuration**
+### **4. Configuration**
 Follow these detailed steps to integrate the required services and permissions for **WHere?**.
 
-**A. Firebase Integration**
+#### **A. Firebase Integration**
 The `lib/services/firebase_options.dart` file is excluded from this repository for security. You must generate your own configuration:
 1. Install FlutterFire CLI: `dart pub global activate flutterfire_cli`
 2. Run the configuration command: `flutterfire configure`
 3. Setup Services: Ensure Authentication, Cloud Firestore, and Firebase Storage are enabled in your Firebase Console.
 
-**B. Gemini AI Setup**
+#### **B. Gemini AI Setup**
 To enable the cultural storytelling features:
 1. Obtain an API key from Google AI Studio.
 2. Open `lib/services/ai_service.dart`.
@@ -110,7 +110,7 @@ To enable the cultural storytelling features:
       "YOUR_GEMINI_API_KEY";
 ```
 
-**C. Android Manifest Settings**
+#### **C. Android Manifest Settings**
 To support GPS tracking, notifications, and image uploads, ensure `android/app/src/main/AndroidManifest.xml` includes these configurations:
 
 ```xml
@@ -140,7 +140,7 @@ To support GPS tracking, notifications, and image uploads, ensure `android/app/s
 </manifest>
 ```
 
-**D. iOS Configuration (Info.plist)**
+#### **D. iOS Configuration (Info.plist)**
 If deploying to iOS, add the following keys to `ios/Runner/Info.plist` to handle permissions:
 ```xml
 <key>NSLocationWhenInUseUsageDescription</key>
@@ -151,7 +151,7 @@ If deploying to iOS, add the following keys to `ios/Runner/Info.plist` to handle
 <string>WHere? requires photo library access to let you choose a profile picture.</string>
 ```
 
-**E. Assets & Branding**
+#### **E. Assets & Branding**
 Confirm that your application branding is correctly mapped in `pubspec.yaml`:
 ```yaml
 flutter:
@@ -161,7 +161,7 @@ flutter:
     - assets/logo.png
 ```
 
-**5. Running the Application**
+### **5. Running the Application**
 Connect a physical device or start an emulator, then run:
 ```bash
 flutter run
